@@ -547,7 +547,7 @@ mod tests {
     #[test]
     fn cjk_unified_ideograph_exhaustive() {
         for &(lo, hi) in generated::CJK_IDEOGRAPH_RANGES.iter() {
-            for x in lo as u32 ... hi as u32 {
+            for x in lo as u32 ..= hi as u32 {
                 let c = char::from_u32(x).unwrap();
 
                 let real_name = format!("CJK UNIFIED IDEOGRAPH-{:X}", x);
